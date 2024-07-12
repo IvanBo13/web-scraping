@@ -1,0 +1,2 @@
+job_title=Data Analyst
+location=Poland

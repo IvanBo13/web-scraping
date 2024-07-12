@@ -82,7 +82,9 @@ def choose_time_period():
         return 'past_month'
     else:
         return 'any_time'
-    
+
+
+
 def get_next_list(time_period:str, num_lists:int):
     """Generates the URL for the next page of job listings and makes a request to retrieve it."""
     time_periods = {
@@ -92,8 +94,16 @@ def get_next_list(time_period:str, num_lists:int):
         'past_24_hours' : "r86400"
     }
 
+    job_title, location = jobs_scraping.get_searching_parameters()
+    splitted_job_title = job_title.split()
+    splitted_location = location.split()
+    if len(splitted_job_title) >= 2:
+        job_title = '%20'.join(splitted_job_title)
+    if len(splitted_location) >= 2:
+        location = '%20'.join(splitted_location)
+
     for start in range(0, num_lists*10, 10):
-        list_url = f'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Data%2BAnalyst&f_TPR={time_periods[time_period]}&location=Poland&start='
+        list_url = f'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords={job_title}&f_TPR={time_periods[time_period]}&location={location}&start='
         current_url = list_url + str(start) # adding 10 to the "start" parameter of list url to get the next list of jobs
         response = jobs_scraping.make_request(current_url)
         # yield None if can't access a page, otherwise return text of the page
@@ -208,10 +218,9 @@ def main():
 
     time_period = choose_time_period()
  
-    lists_generator = get_next_list(time_period, 100) # creating  generator that yields lists of jobs
+    lists_generator = get_next_list(time_period, 1) # creating  generator that yields lists of jobs
     print("linkedin scraping is started\n")
-    for i in range(100):
-        list_html = next(lists_generator)
+    for list_html in lists_generator:
         if not list_html:
             continue
         list_soup = BeautifulSoup(list_html, 'html.parser')

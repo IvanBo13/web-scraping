@@ -133,14 +133,16 @@ def choose_time_period():
     
 
 start = 0
-def get_next_list(time_period):
+
+def get_next_list(time_period:str, job_title:str, location:str):
     """Generates the URL for the next page of job listings and makes a request to retrieve it."""
     global time_periods
     global start
+    
     if not time_period: # If time_period is None or an empty string, jobs in the list will be from any time.
-        list_url = f"https://pl.indeed.com/jobs?q=data+analyst&l=Polska&start={str(start)}"
+        list_url = f"https://pl.indeed.com/jobs?q={job_title}&l={location}&start={str(start)}"
     else: # jobs in the list will be filtered by the passed time_period.
-        list_url = f"https://pl.indeed.com/jobs?q=data+analyst&l=Polska&start={str(start)}&fromage={time_periods[time_period]}"
+        list_url = f"https://pl.indeed.com/jobs?q={job_title}&l={location}&start={str(start)}&fromage={time_periods[time_period]}"
     response = make_request(list_url)
     start += 10
     return None if response.status_code != 200 else response.text
@@ -200,7 +202,6 @@ def parse_jobs(list_soup : BeautifulSoup, scraped_ids:list):
         
             
 
-
 def main():
     """Main function to run the scraping process and save the data."""
 
@@ -212,10 +213,19 @@ def main():
     conn.close()
 
     time_period = choose_time_period()
-        
+
+    job_title, location = jobs_scraping.get_searching_parameters()
+    # transforming_searching_parameters
+    splitted_job_title = job_title.split()
+    splitted_location = location.split()
+    if len(splitted_job_title) >= 2:
+        job_title = '+'.join(splitted_job_title).lower()
+    if len(splitted_location) >= 2:
+        location = '+'.join(splitted_location)
+
     print("indeed scraping is started\n")
     for i in range(100):
-        list_html = get_next_list(time_period)
+        list_html = get_next_list(time_period, job_title, location)
         time.sleep(2)
         if not list_html:
             continue
