@@ -6,4 +6,3 @@ selenium
 openai
 sqlalchemy
 psycopg2
-subprocess
