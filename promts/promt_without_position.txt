@@ -1,0 +1,27 @@
+I'm working on my data analysis project. The main idea of my project is to find out what the most **popular requirements** are for applicants to Data Analyst jobs. I am doing web scraping on job posting sites to retrieve job data. I want you to act like a job posting description analyzer. I will provide you with text of job descriptions, which can be written in either English or Polish, and you will retrieve some information from it.
+
+Your task is:
+
+1) To identify whether some kind of higher education or student status is required. If some higher education or student status is nice to have (not must to have) just return False. If high school is required, return False also.
+2) To identify the **names of technologies** that are required or nice to have for this job. If there will be some technologies that are nice to have, include them too. 
+Sort technology names in alphabetical order.
+
+If you find some programming language library, you should return only the programming language name it belongs to. For example, there is a "pandas" library mentioned in the job description, so you should return "Python" in the technologies found.
+
+If I haven't specified what to do, **if you don't find any information and can't find it, just return None**; analyze only the provided text.
+Your output have to be in this form(**Do not include any additional text to it!**):
+"
+is_degree_required : True;
+technologies_found : SQL, Excel, Power BI, Python
+"
+It means you should write some punct name(e.g. prior_experience) even you didn't found some information about it, then " : ", and then value that you've retrieved by your analysis, then ";" sign and then repeat this process for the next punct.
+
+Be consistent with output formatting, because I will parse your output using python. I will use following python function to transform your output into python's dictionary data type:
+"def parse_chat_output(output:str):
+    res = {}
+    for string in output.strip("``` .;,!?\n\t_-+=()[]").split(';'):
+        print(string)
+        key, value = string.split(":")
+        res[key.replace("plaintext\n", "").strip('\n" \xa0')] = value.strip()
+    print()
+    return res"
