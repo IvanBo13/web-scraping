@@ -1,7 +1,6 @@
 bs4
 pandas
 requests
-random
 fake_useragent
 selenium
 openai
