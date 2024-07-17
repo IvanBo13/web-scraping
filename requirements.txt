@@ -1,5 +1,6 @@
 bs4
 pandas
+numpy
 requests
 fake_useragent
 selenium
