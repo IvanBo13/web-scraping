@@ -25,5 +25,16 @@ The repository is organized as follows:
 ### README.md: This file.
 ### requirements.txt: Contains the list of Python packages required to run the project.
 
-## Setup and installation
+## Prerequisites
+- [Python 3.11 or higher](https://www.python.org/downloads/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- 5-10 proxies
+- chatGPT API key (you must buy it in [official cite](https://platform.openai.com/))
 
+## Setup and installation
+1. Clone the repository on your local machine
+2. Install the required packages
+3. [Create PostgreSQL database](https://www.geeksforgeeks.org/postgresql-create-database/)
+4. Update `db_credentials.txt` with credentials of PostgreSQL database that you created
+5. [Set up your API key](https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key)
+6. 
