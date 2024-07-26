@@ -14,7 +14,8 @@ Contains text files used for generating prompts.
 ### py_scripts_and_notebooks/: 
 Contains the Python scripts, Jupyter notebooks, and some text files used for scraping and data analysis.
 - description_analysis.py: Analyzes job descriptions using the GPT model.
-- indeed_scraping.py: Scrapes job postings from Indeed.
+- indeed_scraping.py: Scrapes job postings from Indeed using `requests` and `BeautifulSoup` (requires proxies).
+- indeed_scraping_selenium.py: Scrapes job postings from Indeed using `Selenium` library (doesn't require proxies).
 - job_database.py: Handles database operations.
 - jobs_scraping.py: Contains helper functions used across different scraping scripts.
 - linkedin_scraping.py: Scrapes job postings from LinkedIn.
@@ -22,7 +23,7 @@ Contains the Python scripts, Jupyter notebooks, and some text files used for scr
 - pracuj_scraping.py: Scrapes job postings from Pracuj.
 - run_scrapers: run all 3 scraping scripts simultaneously.
 - transformation.ipynb: Jupyter notebook for data cleaning and transformation.
-- db_credentials.txt: Contains credentials for the PostgreSQL database.
+- [db_credentials.txt](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/db_credentials.txt): Contains credentials for the PostgreSQL database.
 - proxies.txt: Contains proxies that are used for requests.
 - searching_parameters.txt: Contains job title and location, which will be searched in sites.
 ### scraping_dates/: 
@@ -63,7 +64,7 @@ location=<your_location>
 ```
 
 ## Usage
-You can run `run_scrapers.py` to run all three scraping scripts simultaneously. Alternately, you can run only one needed scraping script.
+You can run `run_scrapers.py` to run `linkedin_scraping.py`, `indeed_scraping.py` and `pracuj_scraping.py` scraping scripts simultaneously. Alternately, you can run only one needed scraping script.
 Then `uncleaned_jobs.csv` will be created in the `data` folder. You can clean it your way or run all cells from `transformation.ipynb` to clean and transform data using ChatGPT.
 When `transformation.ipynb` is completed, cleaned data is loaded into a database with credentials specified in `db_credentials.txt`, and `uncleaned_jobs.csv` is deleted.
  
