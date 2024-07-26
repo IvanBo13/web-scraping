@@ -6,31 +6,31 @@ The repository is organized as follows:
 
 ### data/: 
 Contains the CSV file with the scraped job data.
-- uncleaned_jobs.csv
+- [uncleaned_jobs.csv](https://github.com/IvanBo13/web-scraping/blob/main/data/uncleaned_jobs.csv)
 ### promts/: 
 Contains text files used for generating prompts.
-- full_promt.txt
-- promt_without_position.txt
+- [full_promt.txt](https://github.com/IvanBo13/web-scraping/blob/main/promts/full_promt.txt)
+- [promt_without_position.txt](https://github.com/IvanBo13/web-scraping/blob/main/promts/promt_without_position.txt)
 ### py_scripts_and_notebooks/: 
 Contains the Python scripts, Jupyter notebooks, and some text files used for scraping and data analysis.
-- description_analysis.py: Analyzes job descriptions using the GPT model.
-- indeed_scraping.py: Scrapes job postings from Indeed using `requests` and `BeautifulSoup` (requires proxies).
-- indeed_scraping_selenium.py: Scrapes job postings from Indeed using `Selenium` library (doesn't require proxies).
-- job_database.py: Handles database operations.
-- jobs_scraping.py: Contains helper functions used across different scraping scripts.
-- linkedin_scraping.py: Scrapes job postings from LinkedIn.
-- pandas_csv.py: Handles CSV file operations using Pandas.
-- pracuj_scraping.py: Scrapes job postings from Pracuj.
-- run_scrapers: run all 3 scraping scripts simultaneously.
-- transformation.ipynb: Jupyter notebook for data cleaning and transformation.
+- [description_analysis.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/description_analysis.py): Analyzes job descriptions using the GPT model.
+- [indeed_scraping.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/indeed_scraping.py): Scrapes job postings from Indeed using `requests` and `BeautifulSoup` (requires proxies).
+- [indeed_scraping_selenium.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/indeed_scraping_selenium.py): Scrapes job postings from Indeed using `Selenium` library (doesn't require proxies).
+- [job_database.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/job_database.py): Handles database operations.
+- [jobs_scraping.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/jobs_scraping.py): Contains helper functions used across different scraping scripts.
+- [linkedin_scraping.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/linkedin_scraping.py): Scrapes job postings from LinkedIn.
+- [pandas_csv.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/pandas_csv.py): Handles CSV file operations using Pandas.
+- [pracuj_scraping.py](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/pracuj_scraping.py): Scrapes job postings from Pracuj.
+- [run_scrapers](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/run_scrapers.py): run all 3 scraping scripts simultaneously.
+- [transformation.ipynb](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/transformation.ipynb): Jupyter notebook for data cleaning and transformation.
 - [db_credentials.txt](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/db_credentials.txt): Contains credentials for the PostgreSQL database.
-- proxies.txt: Contains proxies that are used for requests.
-- searching_parameters.txt: Contains job title and location, which will be searched in sites.
+- [proxies.txt](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/proxies.txt): Contains proxies that are used for requests.
+- [searching_parameters.txt](https://github.com/IvanBo13/web-scraping/blob/main/py_scripts_and%20notebooks/searching_parameters.txt): Contains job title and location, which will be searched in sites.
 ### scraping_dates/: 
 Contains text files with the dates of the last scraping operations. They are used to filter out job postings that are already scraped.
-- indeed_last_scraping_date.txt
-- linkedin_last_scraping_date.txt
-- pracuj_last_scraping_date.txt
+- `indeed_last_scraping_date.txt`
+- `linkedin_last_scraping_date.txt`
+- `pracuj_last_scraping_date.txt`
 ### README.md: 
 This file.
 ### requirements.txt: 
