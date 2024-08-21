@@ -31,10 +31,15 @@ Contains text files with the dates of the last scraping operations. They are use
 - `indeed_last_scraping_date.txt`
 - `linkedin_last_scraping_date.txt`
 - `pracuj_last_scraping_date.txt`
+### analysis/:
+Contains Power BI report and screenshot of it.
+- `data_analysis.pbix`
+- `screenshot.img`
 ### README.md: 
 This file.
 ### requirements.txt: 
 Contains the list of Python packages required to run the project.
+
 
 ## Prerequisites
 - [Python 3.11 or higher](https://www.python.org/downloads/)
