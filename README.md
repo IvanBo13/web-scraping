@@ -34,7 +34,7 @@ Contains text files with the dates of the last scraping operations. They are use
 ### analysis/:
 Contains Power BI report and screenshot of it.
 - `data_analysis.pbix`
-- `screenshot.img`
+- `screenshot.png`
 ### README.md: 
 This file.
 ### requirements.txt: 
