@@ -67,4 +67,8 @@ location=<your_location>
 You can run `run_scrapers.py` to run `linkedin_scraping.py`, `indeed_scraping.py` and `pracuj_scraping.py` scraping scripts simultaneously. Alternately, you can run only one needed scraping script.
 Then `uncleaned_jobs.csv` will be created in the `data` folder. You can clean it your way or run all cells from `transformation.ipynb` to clean and transform data using ChatGPT.
 When `transformation.ipynb` is completed, cleaned data is loaded into a database with credentials specified in `db_credentials.txt`, and `uncleaned_jobs.csv` is deleted.
+
+## Result of Analysis
+![image](https://github.com/user-attachments/assets/ea6387a0-3e33-43c0-b0ca-7776de5db345)
+
  
